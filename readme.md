@@ -1,3 +1,10 @@
+Installation : LAMP + libmodapache2 php7.2
+
+Copy project 
+Composer install
+a2enmode rewrite
+php artisan key:generate
+
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">
