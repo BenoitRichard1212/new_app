@@ -14,7 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
+//Web
 Route::get('/rooms', 'RoomsController@index');
 Route::get('/sensors', 'SensorsController@index');
 Route::get('/relays', 'RelaysController@index');
+
+//Ressources
+Route::resource('products','ProductController');
