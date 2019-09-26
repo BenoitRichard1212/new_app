@@ -6,5 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class global_settings extends Model
 {
-    //
+    //Model pour la table : global_settings;
+    protected $primaryKey = null;
+    protected $table = 'global_settings';
+    public $timestamps = false;
 }
