@@ -10,4 +10,7 @@ class global_settings extends Model
     protected $primaryKey = null;
     protected $table = 'global_settings';
     public $timestamps = false;
+    protected $fillable = [
+        'name', 'value'
+    ];
 }
