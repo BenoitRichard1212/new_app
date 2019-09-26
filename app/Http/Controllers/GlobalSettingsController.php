@@ -14,7 +14,10 @@ class GlobalSettingsController extends Controller
      */
     public function index()
     {
-        //
+        $global_settings = global_settings::latest()->paginate(5);
+  
+        return view('global_settings.index',compact('global_settings'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
@@ -24,7 +27,7 @@ class GlobalSettingsController extends Controller
      */
     public function create()
     {
-        //
+        return view('global_settings.create');
     }
 
     /**
@@ -35,7 +38,15 @@ class GlobalSettingsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'value' => 'required',
+        ]);
+  
+        global_settings::create($request->all());
+   
+        return redirect()->route('global_settings.index')
+                        ->with('success','Global Settings created successfully.');
     }
 
     /**
@@ -46,7 +57,7 @@ class GlobalSettingsController extends Controller
      */
     public function show(global_settings $global_settings)
     {
-        //
+        return view('global_settings.show',compact('global_settings'));
     }
 
     /**
@@ -57,7 +68,7 @@ class GlobalSettingsController extends Controller
      */
     public function edit(global_settings $global_settings)
     {
-        //
+        return view('global_settings.edit',compact('global_settings'));
     }
 
     /**
@@ -69,7 +80,15 @@ class GlobalSettingsController extends Controller
      */
     public function update(Request $request, global_settings $global_settings)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'value' => 'required',
+        ]);
+  
+        $global_settings->update($request->all());
+  
+        return redirect()->route('global_settings.index')
+                        ->with('success','Global Settings updated successfully');
     }
 
     /**
@@ -80,6 +99,9 @@ class GlobalSettingsController extends Controller
      */
     public function destroy(global_settings $global_settings)
     {
-        //
+        $global_settings->delete();
+  
+        return redirect()->route('global_settings.index')
+                        ->with('success','Global Settings deleted successfully');
     }
 }
