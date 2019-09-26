@@ -8,13 +8,13 @@ class GlobalSettingsController extends Controller
 {
     public function index()
     {
-        $relays = Relays::all();
-        return view('relays', ['relays' => $relays]);
+        $gsettings = global_settings::all();
+        return view('gsettings', ['gsettings' => $gsettings]);
     }
 
-    public function getRelay($p_relay)
+    public function getSetting($p_setting)
     {
-        $relay = Relays::where('relays', $p_relay->name)->first();
-        return $relay;
+        $setting = global_settings::where('gsettings', $p_gsetting->name)->first();
+        return $gsetting;
     }
 }
