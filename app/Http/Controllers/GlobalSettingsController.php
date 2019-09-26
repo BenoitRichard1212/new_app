@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class GlobalSettingsController extends Controller
 {
+    public function create()
+    {
+        return view('global_settings.create');
+    }
+    
     public function index()
     {
         $gsettings = global_settings::all();
