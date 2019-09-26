@@ -16,13 +16,13 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Name:</strong>
-                {{ $global_settings->name() }}
+                {{ $global_settings->name }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Details:</strong>
-                {{ $global_settings->value() }}
+                <strong>Value:</strong>
+                {{ $global_settings->value }}
             </div>
         </div>
     </div>
