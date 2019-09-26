@@ -15,6 +15,7 @@ class GlobalSettingsController extends Controller
     public function index()
     {
         $global_settings = global_settings::latest()->paginate(5);
+        $global_settings->timestamps = false;
   
         return view('global_settings.index',compact('global_settings'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
