@@ -18,6 +18,7 @@ Route::get('/', function () {
 Route::get('/rooms', 'RoomsController@index');
 Route::get('/sensors', 'SensorsController@index');
 Route::get('/relays', 'RelaysController@index');
+Route::get('/global_settings', 'GlobalSettingsController@index');
 
 //Ressources
 Route::resource('products','ProductController');

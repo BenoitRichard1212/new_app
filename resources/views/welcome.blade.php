@@ -88,6 +88,7 @@
                     <a href="{{ url('rooms') }}">Rooms</a>
                     <a href="{{ url('sensors') }}">Sensors</a>
                     <a href="{{ url('relays') }}">Relays</a>
+                    <a href="{{ url('global_settings') }}">Global Settings</a>
                 </div>
             </div>
         </div>
