@@ -64,6 +64,16 @@
         </style>
     </head>
     <body>
+        <div class="row">
+            <div class="col-lg-12 margin-tb">
+                <div class="pull-left">
+                    <a class="btn btn-primary" href="/welcome">MODE CLIM</a>
+                </div>
+                <div class="pull-right">
+                    <a class="btn btn-primary" href="/welcome">POWER ON/OFF</a>
+                </div>
+            </div>
+        </div>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
