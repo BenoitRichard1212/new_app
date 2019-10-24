@@ -21,7 +21,7 @@
                 margin: 0;
             }
             .full-height {
-                height: 100vh;
+                height: 2vh;
             }
             .flex-center {
                 align-items: center;
@@ -52,7 +52,7 @@
                 text-transform: uppercase;
             }
             .m-b-md {
-                margin-bottom: 30px;
+                margin-bottom: 5px;
             }
         </style>
     </head>
