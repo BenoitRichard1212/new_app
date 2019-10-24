@@ -25,7 +25,7 @@
   
     <form action="{{ route('global_settings.update',$global_settings) }}" method="POST">
         @csrf
-        @method('PUT')
+        @method('POST')
    
          <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
