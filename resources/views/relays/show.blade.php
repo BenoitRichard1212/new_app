@@ -22,13 +22,13 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Status:</strong>
-                {{ $relays->value }}
+                {{ $relays->status }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>GPIO:</strong>
-                {{ $relays->value }}
+                {{ $relays->gpio }}
             </div>
         </div>
     </div>

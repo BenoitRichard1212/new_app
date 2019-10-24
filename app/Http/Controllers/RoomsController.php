@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Rooms;
+use App\rooms;
 use Illuminate\Http\Request;
 
 class RoomsController extends Controller
