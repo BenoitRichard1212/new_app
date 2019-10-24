@@ -23,7 +23,7 @@
         </div>
     @endif
   
-    <form action="{{ route('global_settings.update',$global_settings->name) }}" method="POST">
+    <form action="{{ route('global_settings.update',$global_settings) }}" method="POST">
         @csrf
         @method('PUT')
    
@@ -37,7 +37,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Value:</strong>
-                    <textarea class="form-control" style="height:150px" name="value" placeholder="Value">{{ $global_settings->value }}</textarea>
+                    <textarea class="form-control" style="height:150px" name="value" value="{{ $global_settings->value }}" placeholder="Value">{{ $global_settings->value }}</textarea>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">

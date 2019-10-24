@@ -6,6 +6,8 @@
 </head>
 <body>
 
+<b> HEATING </b>
+
 <p>
    <a href="{{ url('rooms') }}">Rooms</a>
    <a href="{{ url('sensors') }}">Sensors</a>
