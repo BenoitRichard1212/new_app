@@ -55,7 +55,6 @@
                 margin-bottom: 10px;
             }
         </style>
-    </head>
 </head>
 <body>
 
