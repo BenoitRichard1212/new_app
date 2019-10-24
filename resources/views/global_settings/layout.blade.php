@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Global Settings</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -75,7 +74,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Heating App
+                    Global Settings
                 </div>
 
                 <div class="links">
