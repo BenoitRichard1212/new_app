@@ -21,7 +21,7 @@ Route::get('/', function () {
 //Route::get('/global_settings', 'GlobalSettingsController@index');
 
 //Ressources
-Route::resource('/global_settings', 'GlobalSettingsController@index');
-Route::resource('/rooms', 'RoomsController@index');
-Route::resource('/sensors', 'SensorsController@index');
-Route::resource('/relays', 'RelaysController@index');
+Route::resource('global_settings', 'GlobalSettingsController');
+Route::resource('rooms', 'RoomsController');
+Route::resource('sensors', 'SensorsController');
+Route::resource('relays', 'RelaysController');
