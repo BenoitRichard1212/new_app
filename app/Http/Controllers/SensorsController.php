@@ -14,7 +14,7 @@ class SensorsController extends Controller
      */
     public function index()
     {
-        $sensors = sensors::orderBy('name')->first()->paginate(5);
+        $sensors = sensors::orderBy('sensor')->first()->paginate(5);
         $sensors->timestamps = false;
   
         return view('sensors.index',compact('sensors'))

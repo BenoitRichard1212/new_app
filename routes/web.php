@@ -15,10 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 //Web
-Route::get('/rooms', 'RoomsController@index');
-Route::get('/sensors', 'SensorsController@index');
-Route::get('/relays', 'RelaysController@index');
-Route::get('/global_settings', 'GlobalSettingsController@index');
+//Route::get('/rooms', 'RoomsController@index');
+//Route::get('/sensors', 'SensorsController@index');
+//Route::get('/relays', 'RelaysController@index');
+//Route::get('/global_settings', 'GlobalSettingsController@index');
 
 //Ressources
-Route::resource('products','ProductController');
+Route::resource('/global_settings', 'GlobalSettingsController@index');
+Route::resource('/rooms', 'RoomsController@index');
+Route::resource('/sensors', 'SensorsController@index');
+Route::resource('/relays', 'RelaysController@index');
