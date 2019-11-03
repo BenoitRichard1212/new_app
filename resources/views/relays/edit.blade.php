@@ -18,7 +18,7 @@
         <div class="form-group">
             <input type="hidden" value="{{csrf_token()}}" name="_token" />
             <label for="value">Status:</label>
-            <input type="text" class="form-control" name="value" value={{$relays->status}} />
+            <input type="text" class="form-control" name="status" value={{$relays->status}} />
             <input type="hidden" value="{{csrf_token()}}" name="_token" />
             <label for="value">GPIO:</label>
             <input type="text" class="form-control" name="gpio" value={{$relays->gpio}} />
