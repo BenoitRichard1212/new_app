@@ -90,10 +90,10 @@ class RoomsController extends Controller
     {
         $rooms = new Rooms();
         $data = $this->validate($request, [
-            'temp_min'=>'required',
-            'sensor_floor'=>'required',
-            'sensor_wall'=>'required',
-            'relay'=>'required'
+            'temp_min'=>'max:255',
+            'sensor_floor'=>'max:255',
+            'sensor_wall'=>'max:255',
+            'relay'=>'max:255'
         ]);
         $data['name'] = $name;
         $rooms->updateRooms($data);

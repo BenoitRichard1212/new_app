@@ -89,9 +89,9 @@ class SensorsController extends Controller
     {
         $sensors = new Sensors();
         $data = $this->validate($request, [
-            'temperature'=>'required',
-            'humidity'=>'required',
-            'device'=>'required'
+            'temperature'=>'max:255',
+            'humidity'=>'max:255',
+            'device'=>'max:255'
         ]);
         $data['sensor'] = $sensor;
         $sensors->updateSensors($data);

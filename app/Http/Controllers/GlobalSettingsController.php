@@ -92,7 +92,7 @@ class GlobalSettingsController extends Controller
         $data['name'] = $name;
         $gs->updateGS($data);
 
-        return redirect('/welcome')->with('success', 'New Global Settings has been updated!!');
+        return redirect('/')->with('success', 'New Global Settings has been updated!!');
     }
 
     /**

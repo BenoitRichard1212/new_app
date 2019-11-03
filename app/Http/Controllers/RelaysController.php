@@ -88,8 +88,8 @@ class RelaysController extends Controller
     {
         $relays = new Relays();
         $data = $this->validate($request, [
-            'status'=>'required',
-            'gpio'=>'required'
+            'status'=>'max:255',
+            'gpio'=>'max:255'
         ]);
         $data['name'] = $name;
         $relays->updateRelays($data);
