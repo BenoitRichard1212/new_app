@@ -21,9 +21,6 @@ class Rooms extends Model
 	        $rooms = $this->find($data['name']);
 	        $rooms->name = $data['name'];
 	        $rooms->temp_min = $data['temp_min'];
-	        //$rooms->sensor_floor = $data['sensor_floor'];
-	        //$rooms->sensor_wall = $data['sensor_wall'];
-	        //$rooms->relay = $data['relay'];
 	        $rooms->save();
 	        return 1;
 	}
