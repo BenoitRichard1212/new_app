@@ -67,9 +67,13 @@ class GlobalSettingsController extends Controller
      * @param  \App\global_settings  $global_settings
      * @return \Illuminate\Http\Response
      */
-    public function edit(global_settings $global_settings)
+    public function edit($name)
     {
-        return view('global_settings.edit',compact('global_settings'));
+        $gs = global_settings::where('name', $name)
+                        ->where('name', $name)
+                        ->first();
+
+        return view('global_settings.edit', compact('gs', 'name'));
     }
 
     /**
@@ -79,19 +83,16 @@ class GlobalSettingsController extends Controller
      * @param  \App\global_settings  $global_settings
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, global_settings $global_settings, $name, $value)
+    public function update(Request $request, $name)
     {
-        //$request->validate([
-        //    #'name' => 'required',
-        //    'value' => 'required',
-        //]);
-  
-        //$global_settings::FindOrFail($name)->update($request->all());
+        $gs = new global_settings();
+        $data = $this->validate($request, [
+            'value'=>'required'
+        ]);
+        $data['name'] = $name;
+        $gs->updateGS($data);
 
-        global_settings::updateOrCreate(['name' => $name], ['value' => $value]);
-
-        return redirect()->route('global_settings.index')
-                        ->with('success','Global Settings updated successfully');
+        return redirect('/welcome')->with('success', 'New Global Settings has been updated!!');
     }
 
     /**

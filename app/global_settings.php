@@ -15,4 +15,13 @@ class global_settings extends Model
     protected $fillable = [
         'name', 'value'
     ];
+
+    public function updateGS($data)
+	{
+	        $gs = $this->find($data['name']);
+	        $gs->name = $data['name'];
+	        $gs->value = $data['value'];
+	        $gs->save();
+	        return 1;
+	}
 }
