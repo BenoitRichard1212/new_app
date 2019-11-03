@@ -31,11 +31,9 @@
             <td>{{ $global_setting->name }}</td>
             <td>{{ $global_setting->value }}</td>
             <td>
+                <form action="{{ route('global_settings.destroy',$global_setting->name) }}" method="POST">
+
                     <a href="{{action('GlobalSettingsController@edit',$global_setting->name)}}" class="btn btn-primary">Edit</a>
-   
-                    <a class="btn btn-info" href="{{ route('global_settings.show',$global_setting->name) }}">Show</a>
-    
-                    <a class="btn btn-primary" href="{{ route('global_settings.edit',$global_setting) }}">Edit</a>
    
                     @csrf
                     @method('DELETE')

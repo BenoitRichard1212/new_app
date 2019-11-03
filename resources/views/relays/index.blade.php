@@ -33,11 +33,9 @@
             <td>{{ $relay->status }}</td>
             <td>{{ $relay->gpio }}</td>
             <td>
+                <form action="{{ route('relays.destroy',$relay->name) }}" method="POST">
+
                     <a href="{{action('RelaysController@edit',$relay->name)}}" class="btn btn-primary">Edit</a>
-   
-                    <a class="btn btn-info" href="{{ route('relays.show',$relay->name) }}">Show</a>
-    
-                    <a class="btn btn-primary" href="{{ route('relays.edit',$relay->name) }}">Edit</a>
    
                     @csrf
                     @method('DELETE')

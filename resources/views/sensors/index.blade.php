@@ -35,11 +35,9 @@
             <td>{{ $sensor->humidity }}</td>
             <td>{{ $sensor->device }}</td>
             <td>
-                    <a href="{{action('SensorsController@edit',$sensor->sensor)}}" class="btn btn-primary">Edit</a>
-   
-                    <a class="btn btn-info" href="{{ route('sensors.show',$sensor->sensor) }}">Show</a>
+                <form action="{{ route('sensors.destroy',$sensor->sensor) }}" method="POST">
     
-                    <a class="btn btn-primary" href="{{ route('sensors.edit',$sensor->sensor) }}">Edit</a>
+                    <a href="{{action('SensorsController@edit',$sensor->sensor)}}" class="btn btn-primary">Edit</a>
    
                     @csrf
                     @method('DELETE')

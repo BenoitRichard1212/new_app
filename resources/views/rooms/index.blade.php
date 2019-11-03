@@ -37,12 +37,10 @@
             <td>{{ $room->sensor_wall }}</td>
             <td>{{ $room->relay }}</td>
             <td>
+                <form action="{{ route('rooms.destroy',$room->name) }}" method="POST">
+
                     <a href="{{action('RoomsController@edit',$room->name)}}" class="btn btn-primary">Edit</a>
-   
-                    <a class="btn btn-info" href="{{ route('rooms.show',$room->name) }}">Show</a>
     
-                    <a class="btn btn-primary" href="{{ route('rooms.edit',$room->name) }}">Edit</a>
-   
                     @csrf
                     @method('DELETE')
       
