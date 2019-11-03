@@ -102,9 +102,9 @@ class SensorsController extends Controller
      * @param  \App\sensors  $sensors
      * @return \Illuminate\Http\Response
      */
-    public function destroy(sensors $sensors)
+    public function destroy($sensor, sensors $sensors)
     {
-        $sensors->delete();
+        $sensors::findOrFail($sensor)->delete();
   
         return redirect()->route('sensors.index')
                         ->with('success','Sensors deleted successfully');

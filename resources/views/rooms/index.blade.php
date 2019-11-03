@@ -37,7 +37,7 @@
             <td>{{ $room->sensor_wall }}</td>
             <td>{{ $room->relay }}</td>
             <td>
-                <form action="{{ route('rooms.destroy',$room->name) }}" method="POST">
+                <form action="{{ route('rooms.destroy',$room->name, $room) }}" method="POST">
    
                     <a class="btn btn-info" href="{{ route('rooms.show',$room->name) }}">Show</a>
     

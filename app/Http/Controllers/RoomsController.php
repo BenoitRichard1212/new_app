@@ -106,9 +106,9 @@ class RoomsController extends Controller
      * @param  \App\rooms  $rooms
      * @return \Illuminate\Http\Response
      */
-    public function destroy(rooms $rooms)
+    public function destroy($name, rooms $rooms)
     {
-        $rooms->delete();
+        $rooms::findOrFail($name)->delete();
   
         return redirect()->route('rooms.index')
                         ->with('success','Rooms deleted successfully');

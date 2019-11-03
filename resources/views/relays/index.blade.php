@@ -33,7 +33,7 @@
             <td>{{ $relay->status }}</td>
             <td>{{ $relay->gpio }}</td>
             <td>
-                <form action="{{ route('relays.destroy',$relay->name) }}" method="POST">
+                <form action="{{ route('relays.destroy',$relay->name, $relay) }}" method="POST">
    
                     <a class="btn btn-info" href="{{ route('relays.show',$relay->name) }}">Show</a>
     

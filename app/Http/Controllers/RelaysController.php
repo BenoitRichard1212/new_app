@@ -100,9 +100,9 @@ class RelaysController extends Controller
      * @param  \App\relays  $relays
      * @return \Illuminate\Http\Response
      */
-    public function destroy(relays $relays)
+    public function destroy($name, relays $relays)
     {
-        $relays->delete();
+       $relays::findOrFail($name)->delete();
   
         return redirect()->route('relays.index')
                         ->with('success','Relays deleted successfully');
