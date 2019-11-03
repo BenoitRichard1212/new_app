@@ -35,7 +35,7 @@
    
                     <a class="btn btn-info" href="{{ route('global_settings.show',$global_setting->name) }}">Show</a>
     
-                    <a class="btn btn-primary" href="{{ route('global_settings.edit',$global_setting) }}">Edit</a>
+                    <a class="btn btn-primary" href="{{ route('global_settings.edit',$global_setting, $global_setting->name) }}">Edit</a>
    
                     @csrf
                     @method('DELETE')
