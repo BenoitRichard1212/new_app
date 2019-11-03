@@ -98,9 +98,9 @@ class GlobalSettingsController extends Controller
      * @param  \App\global_settings  $global_settings
      * @return \Illuminate\Http\Response
      */
-    public function destroy(global_settings $global_settings)
+    public function destroy($name)
     {
-        $global_settings::findOrFail($global_settings->name)->delete();
+        $global_settings::findOrFail($name)->delete();
 
   
         return redirect()->route('global_settings.index')
