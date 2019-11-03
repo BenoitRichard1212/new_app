@@ -82,18 +82,18 @@ class RoomsController extends Controller
      * @param  \App\rooms  $rooms
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, string $name)
+    public function update(Request $request, $id)
     {
-        $request->validate([
-            'name' => 'required',
-            'temp_min' => 'required',
-            'sensor_floor' => 'required',
-            'sensor_wall' => 'required',
-            'relay' => 'required',
-        ]);
+        #$request->validate([
+        #    'name' => 'required',
+        #   'temp_min' => 'required',
+        #    'sensor_floor' => 'required',
+        #    'sensor_wall' => 'required',
+        #    'relay' => 'required',
+        #]);
 
-        $rooms::where('name',$name)->first();
-  
+        #$rooms::where('name',$name)->first();
+
         $rooms->update($request->all());
   
         return redirect()->route('rooms.index')

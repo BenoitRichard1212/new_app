@@ -41,7 +41,7 @@
    
                     <a class="btn btn-info" href="{{ route('rooms.show',$room->name) }}">Show</a>
     
-                    <a class="btn btn-primary" href="{{ route('rooms.edit',$room) }}">Edit</a>
+                    <a class="btn btn-primary" href="{{ route('rooms.edit',$room->name) }}">Edit</a>
    
                     @csrf
                     @method('DELETE')
