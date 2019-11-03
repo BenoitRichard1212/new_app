@@ -81,12 +81,15 @@ class GlobalSettingsController extends Controller
      */
     public function update(Request $request, global_settings $global_settings, $name)
     {
-        $request->validate([
-            #'name' => 'required',
-            'value' => 'required',
-        ]);
+        //$request->validate([
+        //    #'name' => 'required',
+        //    'value' => 'required',
+        //]);
   
-        $global_settings::FindOrFail($name)->update($request->all());
+        //$global_settings::FindOrFail($name)->update($request->all());
+
+        $gs = global_settings::findorfail($name);
+        $updateNow = $gs->update($request);
   
         return redirect()->route('global_settings.index')
                         ->with('success','Global Settings updated successfully');
