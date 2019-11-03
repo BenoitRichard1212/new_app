@@ -18,7 +18,7 @@
         <div class="form-group">
             <input type="hidden" value="{{csrf_token()}}" name="_token" />
             <label for="value">Temp_Min:</label>
-            <input type="text" class="form-control" name="value" value={{$rooms->temp_min}} />
+            <input type="text" class="form-control" name="temp_min" value={{$rooms->temp_min}} />
             <input type="hidden" value="{{csrf_token()}}" name="_token" />
         </div>
         <button type="submit" class="btn btn-primary">Update</button>
