@@ -13,6 +13,6 @@ class global_settings extends Model
     protected $table = 'global_settings';
     public $timestamps = false;
     protected $fillable = [
-        'name', 'value'
+        'value'
     ];
 }
