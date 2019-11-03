@@ -79,7 +79,7 @@ class GlobalSettingsController extends Controller
      * @param  \App\global_settings  $global_settings
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, global_settings $global_settings, $name)
+    public function update(Request $request, global_settings $global_settings, $name, $value)
     {
         //$request->validate([
         //    #'name' => 'required',
@@ -88,9 +88,8 @@ class GlobalSettingsController extends Controller
   
         //$global_settings::FindOrFail($name)->update($request->all());
 
-        $gs = global_settings::findorfail($name);
-        $updateNow = $gs->update($request);
-  
+        global_settings::updateOrCreate(['name' => $name], ['value' => $value]);
+
         return redirect()->route('global_settings.index')
                         ->with('success','Global Settings updated successfully');
     }
