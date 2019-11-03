@@ -1,55 +1,30 @@
 @extends('relays.layout')
-   
+
 @section('content')
+<div class="container">
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div><br />
+@endif
     <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2>Edit Relays</h2>
-            </div>
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('relays.index') }}"> Back</a>
-            </div>
+    <form method="post" action="{{action('RelaysController@update', $name)}}" >
+        {{csrf_field()}}
+        <input name="_method" type="hidden" value="PATCH">
+        <div class="form-group">
+            <input type="hidden" value="{{csrf_token()}}" name="_token" />
+            <label for="value">Status:</label>
+            <input type="text" class="form-control" name="value" value={{$relays->status}} />
+            <input type="hidden" value="{{csrf_token()}}" name="_token" />
+            <label for="value">GPIO:</label>
+            <input type="text" class="form-control" name="value" value={{$relays->gpio}} />
         </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+        </form>
     </div>
-   
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <strong>Whoops!</strong> There were some problems with your input.<br><br>
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-  
-    <form action="{{ route('relays.update',$relays->name) }}" method="POST">
-        @csrf
-        @method('PUT')
-   
-         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Name:</strong>
-                    <input type="text" name="name" value="{{ $relays->name }}" class="form-control" placeholder="Name">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Status:</strong>
-                    <input type="text" name="name" value="{{ $relays->status }}" class="form-control" placeholder="Status">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>GPIO:</strong>
-                    <input type="text" name="name" value="{{ $relays->gpio }}" class="form-control" placeholder="GPIO">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-        </div>
-   
-    </form>
+</div>
 @endsection

@@ -15,4 +15,14 @@ class Relays extends Model
     protected $fillable = [
         'name', 'status', 'gpio'
     ];
+
+    public function updateRelays($data)
+	{
+	        $relays = $this->find($data['name']);
+	        $relays->name = $data['name'];
+	        $relays->value = $data['status'];
+	        $relays->gpio = $data['gpio'];
+	        $relays->save();
+	        return 1;
+	}
 }

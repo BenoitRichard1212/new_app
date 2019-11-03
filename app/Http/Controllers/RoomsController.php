@@ -70,9 +70,13 @@ class RoomsController extends Controller
      * @param  \App\rooms  $rooms
      * @return \Illuminate\Http\Response
      */
-    public function edit(rooms $rooms)
+    public function edit($name)
     {
-        return view('rooms.edit',compact('rooms'));
+        $rooms = Rooms::where('name', $name)
+                        ->where('name', $name)
+                        ->first();
+
+        return view('rooms.edit', compact('rooms', 'name'));
     }
 
     /**
@@ -82,22 +86,19 @@ class RoomsController extends Controller
      * @param  \App\rooms  $rooms
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $name)
     {
-        #$request->validate([
-        #    'name' => 'required',
-        #   'temp_min' => 'required',
-        #    'sensor_floor' => 'required',
-        #    'sensor_wall' => 'required',
-        #    'relay' => 'required',
-        #]);
+        $rooms = new Rooms();
+        $data = $this->validate($request, [
+            'temp_min'=>'required',
+            'sensor_floor'=>'required',
+            'sensor_wall'=>'required',
+            'relay'=>'required'
+        ]);
+        $data['name'] = $name;
+        $rooms->updateRooms($data);
 
-        #$rooms::where('name',$name)->first();
-
-        $rooms->update($request->all());
-  
-        return redirect()->route('rooms.index')
-                        ->with('success','Rooms updated successfully');
+        return redirect('/')->with('success', 'New Rooms has been updated!!');
     }
 
     /**

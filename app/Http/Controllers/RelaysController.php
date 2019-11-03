@@ -68,9 +68,13 @@ class RelaysController extends Controller
      * @param  \App\relays  $relays
      * @return \Illuminate\Http\Response
      */
-    public function edit(relays $relays)
+    public function edit($name)
     {
-        return view('relays.edit',compact('relays'));
+        $relays = Relays::where('name', $name)
+                        ->where('name', $name)
+                        ->first();
+
+        return view('relays.edit', compact('relays', 'name'));
     }
 
     /**
@@ -80,18 +84,17 @@ class RelaysController extends Controller
      * @param  \App\relays  $relays
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, relays $relays)
+    public function update(Request $request, $name)
     {
-        $request->validate([
-            'name' => 'required',
-            'status' => 'required',
-            'gpio' => 'required',
+        $relays = new Relays();
+        $data = $this->validate($request, [
+            'status'=>'required',
+            'gpio'=>'required'
         ]);
-  
-        $relays->update($request->all());
-  
-        return redirect()->route('relays.index')
-                        ->with('success','Relays updated successfully');
+        $data['name'] = $name;
+        $relays->updateRelays($data);
+
+        return redirect('/')->with('success', 'New Relays has been updated!!');
     }
 
     /**

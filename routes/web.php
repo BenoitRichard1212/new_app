@@ -28,3 +28,12 @@ Route::resource('relays', 'RelaysController');
 
 Route::get('/edit/global_settings/{name}','GlobalSettingsController@edit');
 Route::patch('/edit/global_settings/{name}','GlobalSettingsController@update');
+
+Route::get('/edit/rooms/{name}','RoomsController@edit');
+Route::patch('/edit/rooms/{name}','RoomsController@update');
+
+Route::get('/edit/relays/{name}','RelaysController@edit');
+Route::patch('/edit/relays/{name}','RelaysController@update');
+
+Route::get('/edit/sensors/{sensor}','SensorsController@edit');
+Route::patch('/edit/sensors/{sensor}','SensorsController@update');

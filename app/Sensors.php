@@ -15,4 +15,15 @@ class Sensors extends Model
     protected $fillable = [
         'sensor', 'temperature', 'humidity', 'device'
     ];
+
+    public function updateSensors($data)
+	{
+	        $sensors = $this->find($data['sensor']);
+	        $sensors->sensor = $data['sensor'];
+	        $sensors->temperature = $data['temperature'];
+	        $sensors->humidity = $data['humidity'];
+	        $sensors->device = $data['device'];
+	        $sensors->save();
+	        return 1;
+	}
 }

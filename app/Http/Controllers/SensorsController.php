@@ -69,9 +69,13 @@ class SensorsController extends Controller
      * @param  \App\sensors  $sensors
      * @return \Illuminate\Http\Response
      */
-    public function edit(sensors $sensors)
+    public function edit($sensor)
     {
-        return view('sensors.edit',compact('sensors'));
+        $sensors = Sensors::where('sensor', $sensor)
+                        ->where('sensor', $sensor)
+                        ->first();
+
+        return view('sensors.edit', compact('sensors', 'sensor'));
     }
 
     /**
@@ -81,19 +85,18 @@ class SensorsController extends Controller
      * @param  \App\sensors  $sensors
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, sensors $sensors)
+    public function update(Request $request, $sensor)
     {
-        $request->validate([
-            'sensor' => 'required',
-            'temperature' => 'required',
-            'humidity' => 'required',
-            'device' => 'required',
+        $sensors = new Sensors();
+        $data = $this->validate($request, [
+            'temperature'=>'required',
+            'humidity'=>'required',
+            'device'=>'required'
         ]);
-  
-        $sensors->update($request->all());
-  
-        return redirect()->route('sensors.index')
-                        ->with('success','Sensors updated successfully');
+        $data['sensor'] = $sensor;
+        $sensors->updateSensors($data);
+
+        return redirect('/')->with('success', 'New Sensors has been updated!!');
     }
 
     /**

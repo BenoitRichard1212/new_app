@@ -35,7 +35,7 @@
             <td>{{ $sensor->humidity }}</td>
             <td>{{ $sensor->device }}</td>
             <td>
-                <form action="{{ route('sensors.destroy',$sensor->sensor, $sensor) }}" method="POST">
+                    <a href="{{action('SensorsController@edit',$sensor->sensor)}}" class="btn btn-primary">Edit</a>
    
                     <a class="btn btn-info" href="{{ route('sensors.show',$sensor->sensor) }}">Show</a>
     
