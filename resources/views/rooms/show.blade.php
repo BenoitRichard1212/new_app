@@ -16,31 +16,31 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Name:</strong>
-                {{ $room->name }}
+                {{ $rooms->name }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Temp min:</strong>
-                {{ $room->temp_min }}
+                {{ $rooms->temp_min }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Sensor Floor:</strong>
-                {{ $room->sensor_floor }}
+                {{ $rooms->sensor_floor }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Sensor Wall:</strong>
-                {{ $room->sensor_wall }}
+                {{ $rooms->sensor_wall }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Relay:</strong>
-                {{ $room->relay }}
+                {{ $rooms->relay }}
             </div>
         </div>
     </div>
