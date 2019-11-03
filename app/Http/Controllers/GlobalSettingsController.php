@@ -82,7 +82,7 @@ class GlobalSettingsController extends Controller
     public function update(Request $request, global_settings $global_settings, $name)
     {
         $request->validate([
-            'name' => 'required',
+            #'name' => 'required',
             'value' => 'required',
         ]);
   
