@@ -82,7 +82,7 @@ class RoomsController extends Controller
      * @param  \App\rooms  $rooms
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, rooms $rooms)
+    public function update(Request $request, string $name)
     {
         $request->validate([
             'name' => 'required',
@@ -91,6 +91,8 @@ class RoomsController extends Controller
             'sensor_wall' => 'required',
             'relay' => 'required',
         ]);
+
+        $rooms::where('name',$name)->first();
   
         $rooms->update($request->all());
   

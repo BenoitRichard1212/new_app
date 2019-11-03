@@ -23,7 +23,7 @@
         </div>
     @endif
   
-    <form action="{{ route('rooms.update',$rooms) }}" method="POST">
+    <form action="{{ route('rooms.update',$rooms->name) }}" method="POST">
         @csrf
         @method('PUT')
    
@@ -31,7 +31,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Name:</strong>
-                    <input type="text" name="name" value="{{ $rooms->name }}" class="form-control" placeholder="{{ $rooms->name }}">
+                    <input type="text" name="name" value="{{ $rooms->name }}" class="form-control" placeholder="Name">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
