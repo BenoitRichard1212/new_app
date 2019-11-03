@@ -94,7 +94,7 @@ class RoomsController extends Controller
             'temp_min'=>'max:255',
             'sensor_floor'=>'max:255',
             'sensor_wall'=>'max:255',
-            'relay'=>'max:255'
+            'relay'=>'max:255',
             'mode' => 'max:255'
         ]);
         $data['name'] = $name;
