@@ -31,7 +31,7 @@
             <td>{{ $global_setting->name }}</td>
             <td>{{ $global_setting->value }}</td>
             <td>
-                <form action="{{ route('global_settings.destroy',$global_setting->name) }}" method="POST">
+                <form action="{{ route('global_settings.destroy',$global_setting->name, $global_setting) }}" method="POST">
    
                     <a class="btn btn-info" href="{{ route('global_settings.show',$global_setting->name) }}">Show</a>
     
