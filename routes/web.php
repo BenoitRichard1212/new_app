@@ -27,4 +27,4 @@ Route::resource('sensors', 'SensorsController');
 Route::resource('relays', 'RelaysController');
 
 Route::get('/edit/global_settings/{name}','GlobalSettingsController@edit');
-Route::post('/edit/global_settings/{name}','GlobalSettingsController@update');
+Route::patch('/edit/global_settings/{name}','GlobalSettingsController@update');
