@@ -100,7 +100,8 @@ class GlobalSettingsController extends Controller
      */
     public function destroy(global_settings $global_settings)
     {
-        $global_settings::where('name', $global_settings->name)->delete();
+        $global_settings::findOrFail($global_settings->name)->delete();
+
   
         return redirect()->route('global_settings.index')
                         ->with('success','Global Settings deleted successfully');
