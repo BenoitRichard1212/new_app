@@ -10,6 +10,8 @@ class Relays extends Model
     protected $primaryKey = "name";
     public $timestamps = false;
     protected $table = 'relays';
+    protected $keyType = 'string';
+	public $incrementing = false;
     protected $fillable = [
         'name', 'status', 'gpio'
     ];
