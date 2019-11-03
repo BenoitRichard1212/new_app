@@ -20,7 +20,7 @@ class Relays extends Model
 	{
 	        $relays = $this->find($data['name']);
 	        $relays->name = $data['name'];
-	        $relays->value = $data['status'];
+	        $relays->status = $data['status'];
 	        $relays->gpio = $data['gpio'];
 	        $relays->type = $data['type'];
 	        $relays->save();
