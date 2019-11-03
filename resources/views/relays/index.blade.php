@@ -24,6 +24,7 @@
             <th>Name</th>
             <th>Status</th>
             <th>GPIO</th>
+            <th>Type</th>
             <th width="280px">Action</th>
         </tr>
         @foreach ($relays as $relay)
@@ -32,6 +33,7 @@
             <td>{{ $relay->name }}</td>
             <td>{{ $relay->status }}</td>
             <td>{{ $relay->gpio }}</td>
+            <td>{{ $relay->type }}</td>
             <td>
                 <form action="{{ route('relays.destroy',$relay->name) }}" method="POST">
 

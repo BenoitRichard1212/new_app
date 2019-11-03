@@ -21,7 +21,10 @@
             <input type="text" class="form-control" name="value" value={{$relays->status}} />
             <input type="hidden" value="{{csrf_token()}}" name="_token" />
             <label for="value">GPIO:</label>
-            <input type="text" class="form-control" name="value" value={{$relays->gpio}} />
+            <input type="text" class="form-control" name="gpio" value={{$relays->gpio}} />
+            <input type="hidden" value="{{csrf_token()}}" name="_token" />
+            <label for="value">Type:</label>
+            <input type="text" class="form-control" name="type" value={{$relays->type}} />
         </div>
         <button type="submit" class="btn btn-primary">Update</button>
         </form>

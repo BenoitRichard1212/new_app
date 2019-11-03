@@ -36,13 +36,19 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Status:</strong>
-                <textarea class="form-control" style="height:150px" name="status" placeholder="Stauts"></textarea>
+                <textarea class="form-control" style="height:150px" name="status" placeholder="Status"></textarea>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>GPIO:</strong>
                 <textarea class="form-control" style="height:150px" name="gpio" placeholder="GPIO"></textarea>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Type: (util or system)</strong>
+                <textarea class="form-control" style="height:150px" name="type" placeholder="Type"></textarea>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">

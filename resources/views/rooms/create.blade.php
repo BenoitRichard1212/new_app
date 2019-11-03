@@ -57,6 +57,12 @@
                 <textarea class="form-control" style="height:150px" name="relay" placeholder="Relay"></textarea>
             </div>
         </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Type: (heat ou cool)</strong>
+                <textarea class="form-control" style="height:150px" name="mode" placeholder="Mode"></textarea>
+            </div>
+        </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <button type="submit" class="btn btn-primary">Submit</button>
         </div>

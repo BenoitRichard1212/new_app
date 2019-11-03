@@ -20,6 +20,8 @@
             <label for="value">Temp_Min:</label>
             <input type="text" class="form-control" name="temp_min" value={{$rooms->temp_min}} />
             <input type="hidden" value="{{csrf_token()}}" name="_token" />
+            <label for="value">Mode:</label>
+            <input type="text" class="form-control" name="mode" value={{$rooms->mode}} />
         </div>
         <button type="submit" class="btn btn-primary">Update</button>
         </form>

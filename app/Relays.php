@@ -13,7 +13,7 @@ class Relays extends Model
     protected $keyType = 'string';
 	public $incrementing = false;
     protected $fillable = [
-        'name', 'status', 'gpio'
+        'name', 'status', 'gpio', 'type'
     ];
 
     public function updateRelays($data)
@@ -22,6 +22,7 @@ class Relays extends Model
 	        $relays->name = $data['name'];
 	        $relays->value = $data['status'];
 	        $relays->gpio = $data['gpio'];
+	        $relays->type = $data['type'];
 	        $relays->save();
 	        return 1;
 	}

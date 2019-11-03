@@ -13,7 +13,7 @@ class Rooms extends Model
 	public $incrementing = false;
     public $timestamps = false;
     protected $fillable = [
-        'name', 'temp_min'
+        'name', 'temp_min', 'mode'
     ];
 
     public function updateRooms($data)
@@ -21,6 +21,7 @@ class Rooms extends Model
 	        $rooms = $this->find($data['name']);
 	        $rooms->name = $data['name'];
 	        $rooms->temp_min = $data['temp_min'];
+            $rooms->mode = $data['mode'];
 	        $rooms->save();
 	        return 1;
 	}

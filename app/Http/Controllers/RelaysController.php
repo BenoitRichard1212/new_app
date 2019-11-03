@@ -43,6 +43,7 @@ class RelaysController extends Controller
             'name' => 'required',
             'status' => 'required',
             'gpio' => 'required',
+            'type' => 'required',
         ]);
   
         relays::create($request->all());
@@ -89,7 +90,8 @@ class RelaysController extends Controller
         $relays = new Relays();
         $data = $this->validate($request, [
             'status'=>'max:255',
-            'gpio'=>'max:255'
+            'gpio'=>'max:255',
+            'type' => 'max:255'
         ]);
         $data['name'] = $name;
         $relays->updateRelays($data);

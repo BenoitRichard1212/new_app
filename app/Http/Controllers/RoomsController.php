@@ -45,6 +45,7 @@ class RoomsController extends Controller
             'sensor_floor' => 'required',
             'sensor_wall' => 'required',
             'relay' => 'required',
+            'mode' => 'required',
         ]);
   
         rooms::create($request->all());
@@ -94,6 +95,7 @@ class RoomsController extends Controller
             'sensor_floor'=>'max:255',
             'sensor_wall'=>'max:255',
             'relay'=>'max:255'
+            'mode' => 'max:255'
         ]);
         $data['name'] = $name;
         $rooms->updateRooms($data);
