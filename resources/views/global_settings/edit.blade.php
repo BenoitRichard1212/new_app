@@ -23,7 +23,7 @@
         </div>
     @endif
   
-    <form action="{{ route('global_settings.update',$global_settings, $global->settings->name, $global_settings->value) }}" method="POST">
+    <form action="{{ route('global_settings.update',$global_settings, $global_settings->name, $global_settings->value) }}" method="POST">
         @csrf
         @method('POST')
    
