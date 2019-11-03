@@ -13,7 +13,7 @@ class Rooms extends Model
 	public $incrementing = false;
     public $timestamps = false;
     protected $fillable = [
-        'name', 'temp_min', 'sensor_floor', 'sensor_wall', 'relay'
+        'name', 'temp_min'
     ];
 
     public function updateRooms($data)
