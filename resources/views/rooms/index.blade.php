@@ -30,7 +30,7 @@
         </tr>
         @foreach ($rooms as $room)
         <tr>
-            {{ $room->name }}
+            <td>{{ $room->name }}</td>
             <td>{{ ++$i }}</td>
             <td>{{ $room->name }}</td>
             <td>{{ $room->temp_min }}</td>
