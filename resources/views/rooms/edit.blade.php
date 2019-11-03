@@ -20,14 +20,6 @@
             <label for="value">Temp_Min:</label>
             <input type="text" class="form-control" name="value" value={{$rooms->temp_min}} />
             <input type="hidden" value="{{csrf_token()}}" name="_token" />
-            <label for="value">Sensor_floor:</label>
-            <input type="text" class="form-control" name="value" value={{$rooms->sensor_floor}} />
-            <input type="hidden" value="{{csrf_token()}}" name="_token" />
-            <label for="value">Sensor_wall:</label>
-            <input type="text" class="form-control" name="value" value={{$rooms->sensor_wall}} />
-            <input type="hidden" value="{{csrf_token()}}" name="_token" />
-            <label for="value">Relay:</label>
-            <input type="text" class="form-control" name="value" value={{$rooms->relay}} />
         </div>
         <button type="submit" class="btn btn-primary">Update</button>
         </form>

@@ -17,12 +17,6 @@
         <input name="_method" type="hidden" value="PATCH">
         <div class="form-group">
             <input type="hidden" value="{{csrf_token()}}" name="_token" />
-            <label for="value">Temperature:</label>
-            <input type="text" class="form-control" name="value" value={{$sensors->temperature}} />
-            <input type="hidden" value="{{csrf_token()}}" name="_token" />
-            <label for="value">Humidity:</label>
-            <input type="text" class="form-control" name="value" value={{$sensors->humidity}} />
-            <input type="hidden" value="{{csrf_token()}}" name="_token" />
             <label for="value">Device:</label>
             <input type="text" class="form-control" name="value" value={{$sensors->device}} />
         </div>
