@@ -7,7 +7,7 @@
                 <h2>Sensors</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('sensors.create') }}"> Create New Sensors</a>
+                <a class="btn btn-success" onclick="return confirm('Are you sure?')" href="{{ route('sensors.create') }}"> Create New Sensors</a>
             </div>
         </div>
     </div>
