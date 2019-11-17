@@ -7,7 +7,7 @@
                 <h2>Relays</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" onclick="return confirm('Are you sure?')" href="{{ route('relays.create') }}"> Create New Relays</a>
+                <a class="btn btn-success" href="{{ route('relays.create') }}"> Create New Relays</a>
             </div>
         </div>
     </div>
