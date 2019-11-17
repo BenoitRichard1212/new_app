@@ -7,7 +7,7 @@
                 <h2>Global Settings</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" onclick="return confirm('Are you sure?')" href="{{ route('global_settings.create') }}"> Create New Global Settings</a>
+                <a class="btn btn-success" href="{{ route('global_settings.create') }}"> Create New Global Settings</a>
             </div>
         </div>
     </div>
@@ -38,7 +38,7 @@
                     @csrf
                     @method('DELETE')
       
-                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</button>
                 </form>
             </td>
         </tr>
