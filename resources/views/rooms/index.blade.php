@@ -7,7 +7,7 @@
                 <h2>Rooms</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('rooms.create') }}"> Create New Rooms</a>
+                <a class="btn btn-success" onclick="return confirm('Are you sure?')" href="{{ route('rooms.create') }}"> Create New Rooms</a>
             </div>
         </div>
     </div>
