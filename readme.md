@@ -1,3 +1,8 @@
+Mettre Arrow Up/Down pour ajuster le chauffage.
+Mettre la temperature direct sur une ligne avec les pieces.
+Pouvoir cliquer sur une piece pour la modifier. (Genre pop up arrow/up/down)
+
+
 Installation : LAMP + libmodapache2 php7.2
 
 Copy project 
