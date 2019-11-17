@@ -11,14 +11,14 @@ Changer la température désirée d'une pièces.
 	- Metter une nouvelle valeur de température. (Attention à l'orthographe.)
 	- Sauvegarder.
 
-Changer Climatisation / Chauffage.
+Changer Climatisation / Chauffage. (Pas en fonction)
 
 	- Cliquez sur "Global Settings"
 	- Cliquez sur "Edit" pour le settings : modeClim
 	- Si 1, mettre 0, si 0, mettre 1. ( 1 = climatisation, 0 = chauffage.)
 	- Sauvegardez.
 
-Fermez le chauffage.
+Fermez le chauffage. (Pas en fonction)
 
 	- Cliquez sur "Global Settings"
 	- Cliquez sur "Edit" pour le settings : modePower
