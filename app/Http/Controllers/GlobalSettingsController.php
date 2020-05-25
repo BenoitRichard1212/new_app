@@ -112,13 +112,22 @@ class GlobalSettingsController extends Controller
     /**
      * Trigger the variable to initiate system shutdown.
      */
-    /*public function systemShutdown()
+    public function systemShutdown()
     {
-        $global_settings::findOrFail($name)->delete();
+        $gs_power = global_settings::find('power');
+        $gs_shutdown_init = global_settings::find('power_shutoff');
 
-        return redirect()->route('global_settings.index')
-                        ->with('success','Global Settings deleted successfully');
-    }*/
+        if ($gs_power->value == 1) {
+            global_settings::where('name', 'power_shutoff')->update(array('value' => 1));
+        }
+        
+        if ($gs->value == 0) {
+            global_settings::where('name', 'power')->update(array('value' => 1));
+            global_settings::where('name', 'power_shutof')->update(array('value' => 0));
+        }
+        
+        return redirect()->back();
+    }
 
     /**
      * Change the variable to switch the mode. Heat / cool.
@@ -134,18 +143,25 @@ class GlobalSettingsController extends Controller
         if ($gs->value == 0) {
             global_settings::where('name', 'modeClim')->update(array('value' => 1));
         }
-        
+
         return redirect()->back();
     }
 
     /**
      * Switch the pool heating on / off
      */
-    /*public function modePiscine()
+    public function modePiscine()
     {
-        $global_settings::findOrFail($name)->delete();
+        $gs = global_settings::find('modePiscine');
 
-        return redirect()->route('global_settings.index')
-                        ->with('success','Global Settings deleted successfully');
-    }*/
+        if ($gs->value == 1) {
+            global_settings::where('name', 'modePiscine')->update(array('value' => 0));
+        }
+        
+        if ($gs->value == 0) {
+            global_settings::where('name', 'modePiscine')->update(array('value' => 1));
+        }
+        
+        return redirect()->back();
+    }
 }
