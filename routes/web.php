@@ -37,3 +37,7 @@ Route::patch('/edit/relays/{name}','RelaysController@update');
 
 Route::get('/edit/sensors/{sensor}','SensorsController@edit');
 Route::patch('/edit/sensors/{sensor}','SensorsController@update');
+
+Route::get('/power', 'GlobalSettingsController@systemShutdown');
+Route::get('/modeclim', 'GlobalSettingsController@modeClim');
+Route::get('/modepiscine', 'GlobalSettingsController@modePiscine');

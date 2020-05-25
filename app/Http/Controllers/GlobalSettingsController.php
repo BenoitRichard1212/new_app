@@ -108,4 +108,34 @@ class GlobalSettingsController extends Controller
         return redirect()->route('global_settings.index')
                         ->with('success','Global Settings deleted successfully');
     }
+
+    /**
+     * Trigger the variable to initiate system shutdown.
+     */
+    /*public function systemShutdown()
+    {
+        $global_settings::findOrFail($name)->delete();
+
+        return redirect()->route('global_settings.index')
+                        ->with('success','Global Settings deleted successfully');
+    }*/
+
+    /**
+     * Change the variable to switch the mode. Heat / cool.
+     */
+    public function modeClim()
+    {
+        global_settings::where('name', 'modeClim')->update(array('value' => 0));
+    }
+
+    /**
+     * Switch the pool heating on / off
+     */
+    /*public function modePiscine()
+    {
+        $global_settings::findOrFail($name)->delete();
+
+        return redirect()->route('global_settings.index')
+                        ->with('success','Global Settings deleted successfully');
+    }*/
 }

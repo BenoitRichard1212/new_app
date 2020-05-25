@@ -69,10 +69,13 @@
         <div class="row">
             <div class="col-lg-12 margin-tb">
                 <div class="pull-left">
-                    <a class="btn btn-primary" href="/">MODE CLIM</a>
+                    <a class="btn btn-primary" href="{{action('GlobalSettingsController@modeClim')}}">MODE CLIM</a>
                 </div>
                 <div class="pull-right">
-                    <a class="btn btn-primary" href="/">POWER ON/OFF</a>
+                    <a class="btn btn-primary" href="{{action('GlobalSettingsController@systemShutdown')}}">POWER ON/OFF</a>
+                </div>
+                <div class="pull-right">
+                    <a class="btn btn-primary" href="{{action('GlobalSettingsController@modePiscine')}}">MODE PISCINE</a>
                 </div>
             </div>
         </div>
