@@ -125,7 +125,17 @@ class GlobalSettingsController extends Controller
      */
     public function modeClim()
     {
-        global_settings::where('name', 'modeClim')->update(array('value' => 0));
+        $gs = global_settings::find('modeClim');
+
+        if ($gs->value == 1) {
+            global_settings::where('name', 'modeClim')->update(array('value' => 0));
+        }
+        
+        if ($gs->value == 0) {
+            global_settings::where('name', 'modeClim')->update(array('value' => 1));
+        }
+        
+        return redirect()->back();
     }
 
     /**
