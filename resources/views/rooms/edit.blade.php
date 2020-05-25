@@ -29,6 +29,9 @@
             <label for="relay">Relay:</label>
             <input type="text" class="form-control" name="relay" value={{$rooms->relay}} />
             <input type="hidden" value="{{csrf_token()}}" name="_token" />
+            <label for="relay_second">Relay Second:</label>
+            <input type="text" class="form-control" name="relay_second" value={{$rooms->relay_second}} />
+            <input type="hidden" value="{{csrf_token()}}" name="_token" />
             <label for="mode">Mode:</label>
             <input type="text" class="form-control" name="mode" value={{$rooms->mode}} />
         </div>

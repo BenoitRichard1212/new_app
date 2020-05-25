@@ -26,6 +26,7 @@
             <th>Sensor Floor</th>
             <th>Sensor Wall</th>
             <th>Relay</th>
+            <th>Relay Second</th>
             <th>Mode</th>
             <th width="280px">Action</th>
         </tr>
@@ -37,6 +38,7 @@
             <td>{{ $room->sensor_floor }}</td>
             <td>{{ $room->sensor_wall }}</td>
             <td>{{ $room->relay }}</td>
+            <td>{{ $room->relay_second }}</td>
             <td>{{ $room->mode }}</td>
             <td>
                 <form action="{{ route('rooms.destroy',$room->name) }}" method="POST">

@@ -59,6 +59,12 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
+                <strong>Relay Second:</strong>
+                <textarea class="form-control" style="height:150px" name="relay_second" placeholder="Relay Second"></textarea>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
                 <strong>Type: (heat ou cool)</strong>
                 <textarea class="form-control" style="height:150px" name="mode" placeholder="Mode"></textarea>
             </div>
