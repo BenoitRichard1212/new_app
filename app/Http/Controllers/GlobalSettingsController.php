@@ -121,7 +121,7 @@ class GlobalSettingsController extends Controller
             global_settings::where('name', 'power_shutoff')->update(array('value' => 1));
         }
         
-        if ($gs->value == 0) {
+        if ($gs_shutdown_init->value == 0) {
             global_settings::where('name', 'power')->update(array('value' => 1));
             global_settings::where('name', 'power_shutof')->update(array('value' => 0));
         }
